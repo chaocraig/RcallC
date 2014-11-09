@@ -15,7 +15,7 @@ helloA()
 
 
 # Wrapper function to invoke helloB with a named argument
-dyn.load(paste(getwd(),"R/hello/helloB.so",sep="/"))
+dyn.load(paste(getwd(), sub_dir, "helloB.so",sep="/"))
 helloB <- function() {
   result <- .C("helloB", greeting="")
   return(result$greeting)
